@@ -234,7 +234,7 @@ function getArtistByIndex(artistArray, artistIndex) {
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(artistArray) {
+/*function get20s(artistArray) {
   const artistsIn20s = [];
   for (let i = 0; i < artistArray.length; i++) {
     const yearsLived = artistArray[i].years.split(" ");
@@ -245,12 +245,20 @@ function get20s(artistArray) {
     }
   }
   return artistsIn20s;
-}
+}*/
 
 /*STRETCH REFACTOR*/
-function check20thCentury()
-
-
+function get20s(artistArray) {
+  const artistsIn20s = artistArray.filter(function(artist) {
+    const yearsLived = artist.years.split(" ");
+    return yearsLived[0] >= 1900 && yearsLived[2] < 2000;
+  });
+  const artistsIn20sNames = [];
+  for (let i = 0; i < artistsIn20s.length; i++) {
+    artistsIn20sNames.push(artistsIn20s[i].name);
+  }
+  return artistsIn20sNames;
+}
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -306,7 +314,7 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(artistArray) {
+/*function lotsOfArt(artistArray) {
   const prolificArtists = [];
   for (let i = 0; i < artistArray.length; i++) {
     if (artistArray[i].paintings > 100) {
@@ -314,9 +322,16 @@ function lotsOfArt(artistArray) {
     }
   }
   return prolificArtists;
+}*/
+
+function lotsOfArt(artistArray) {
+  const prolificArtists = artistArray.filter(artist => artist.paintings > 100);
+  const prolificArtistName = [];
+  for (let i = 0; i < prolificArtists.length; i++) {
+    prolificArtistName.push(prolificArtists[i].name);
+  }
+  return prolificArtistName;
 }
-
-
 
 
 // 🎨🎨 STRETCH 🎨🎨//
@@ -353,7 +368,7 @@ Create a function called `randomize` that takes a data array as an argument and 
 
 function randomize(array) {
   let currentIndex = array.length, tempIndex, randomIndex;
-  
+
   while (0 !== currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
