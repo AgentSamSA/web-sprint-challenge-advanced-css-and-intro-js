@@ -170,5 +170,6 @@ button:hover{
         width: 80%;
     }
     .artist img {
-        max-height: 40vh;
+        max-height: 30vh;
     }
+}
