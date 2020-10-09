@@ -253,10 +253,9 @@ function get20s(artistArray) {
     const yearsLived = artist.years.split(" ");
     return yearsLived[0] >= 1900 && yearsLived[2] < 2000;
   });
-  const artistsIn20sNames = [];
-  for (let i = 0; i < artistsIn20s.length; i++) {
-    artistsIn20sNames.push(artistsIn20s[i].name);
-  }
+  const artistsIn20sNames = artistsIn20s.map(function(artist) {
+    return artist.name;
+  });
   return artistsIn20sNames;
 }
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -326,10 +325,9 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 function lotsOfArt(artistArray) {
   const prolificArtists = artistArray.filter(artist => artist.paintings > 100);
-  const prolificArtistName = [];
-  for (let i = 0; i < prolificArtists.length; i++) {
-    prolificArtistName.push(prolificArtists[i].name);
-  }
+  const prolificArtistName = prolificArtists.map(function(artists) {
+    return artists.name;
+  });
   return prolificArtistName;
 }
 
