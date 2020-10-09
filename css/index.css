@@ -173,3 +173,38 @@ button:hover{
         max-height: 30vh;
     }
 }
+
+@media(max-width: 800px) {
+    body {
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    a {
+        font-size: 1.7rem;
+    }
+    nav {
+        width: 50%;
+    }
+    nav span {
+        border-width: 2px;
+    }
+    .title-container div, .title-container hr {
+        width: 100%;
+    }
+    button {
+        margin-top: 5%;
+    }
+    .artists-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .artist {
+        width: 60%;
+    }
+    .artist img {
+        max-height: 30vh;
+    }
+}
