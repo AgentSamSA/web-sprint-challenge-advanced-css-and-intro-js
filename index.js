@@ -247,6 +247,8 @@ function get20s(artistArray) {
   return artistsIn20s;
 }
 
+/*STRETCH REFACTOR*/
+function check20thCentury()
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -339,20 +341,27 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */) {
-
-  /* Code here */
-
-}
+/*
+function getHTML(data) {
+  for (let i = )
+  for (let )
+}*/
 
 
 /* 💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪
 Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */) {
-
-  /* Code here */
-
+function randomize(array) {
+  let currentIndex = array.length, tempIndex, randomIndex;
+  
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    tempIndex = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = tempIndex;
+  }
+  return array;
 }
 
 
